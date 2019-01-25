@@ -12,6 +12,8 @@ public class TapToMove : MonoBehaviour
     private Vector3 Direction;
     public float RotationSpeed;
 
+    public Animator Anim;
+
     RaycastHit hit;
     Ray ray;
 
@@ -60,13 +62,14 @@ public class TapToMove : MonoBehaviour
         {
             //move the gameobject to the desired position
             gameObject.transform.position = Vector3.Lerp(gameObject.transform.position, endPoint, 1 / (duration * (Vector3.Distance(gameObject.transform.position, endPoint))));
-
+            Anim.SetFloat("Speed", 1);
         }
         //set the movement indicator flag to false if the endPoint and current gameobject position are equal
         else if (flag && Mathf.Approximately(gameObject.transform.position.magnitude, endPoint.magnitude))
         {
             flag = false;
             Debug.Log("Arrived");
+            Anim.SetFloat("Speed", 0);
         }
 
     }
