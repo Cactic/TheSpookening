@@ -27,7 +27,6 @@ public class TapToMove : MonoBehaviour
 
     void Update()
     {
-
         //check if the screen is clicked   
         if (Input.GetMouseButtonDown(0))
         {
@@ -50,10 +49,10 @@ public class TapToMove : MonoBehaviour
             //find the vector pointing from our position to the target
             Direction = (endPoint - transform.position).normalized;
 
-            //create the rotation we need to be in to look at the target
+            //create the rotation to look at the target
             LookRotation = Quaternion.LookRotation(Direction);
 
-            //rotate us over time according to speed until we are in the required rotation
+            //rotate over time according to speed until required rotation
             transform.rotation = Quaternion.Slerp(transform.rotation, LookRotation, RotationSpeed);
 
         }
