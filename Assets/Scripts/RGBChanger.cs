@@ -7,10 +7,14 @@ public class RGBChanger : MonoBehaviour {
 
     [SerializeField]
     Image[] HUDImages;
+    [SerializeField]
+    GameObject MenuPanel;
 
     void Start() {
+        MenuPanel.SetActive(true);
         GameObject[] tempObjects = GameObject.FindGameObjectsWithTag("RGBable");
         HUDImages = new Image[tempObjects.Length];
+        MenuPanel.SetActive(false);
         for(int i = 0; i < tempObjects.Length; i++) {
             HUDImages[i] = tempObjects[i].GetComponent<Image>();
         }
