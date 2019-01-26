@@ -64,7 +64,6 @@ public class RadialMenu : MonoBehaviour
                         showingMenu = true;
                         // Done
                         showingMenu = true;
-                        Debug.Log("wow");
                         middleImage.gameObject.SetActive(true);
 
                         for (int i = 0; i < optionsImages.Length; i++)
@@ -73,7 +72,6 @@ public class RadialMenu : MonoBehaviour
                             optionsImages[i].CrossFadeAlpha(1, 0.25f, false);
                             MoveOptionsMenu();
                         }
-
                         playerMoving = false;
                     }
                 }
