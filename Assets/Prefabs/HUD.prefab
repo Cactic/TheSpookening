@@ -3170,6 +3170,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Images: []
   testImage: {fileID: 21300000, guid: f0d6ea189fe88b941a6c7fefa35109cd, type: 3}
+  radial: {fileID: 0}
 --- !u!1 &5428762685374058855
 GameObject:
   m_ObjectHideFlags: 0

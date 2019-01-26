@@ -4,8 +4,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class RadialMenu : MonoBehaviour
-{
+public class RadialMenu : MonoBehaviour {
     [SerializeField] private GameObject middleImage;
     [SerializeField] private Image interactImage;
     [SerializeField] private Image examineImage;
@@ -17,74 +16,87 @@ public class RadialMenu : MonoBehaviour
     Image[] optionsImages;
     CanvasRenderer[] canvasRenderers;
 
+    ItemInteraction currentItem;
+
+    [SerializeField] Inventory inventory;
+
     bool showingMenu;
 
+    float Extents;
+
     // Start is called before the first frame update
-    void Start()
-    {
+    void Start() {
         optionsImages = new Image[] { interactImage, examineImage, mouthImage };
         canvasRenderers = new CanvasRenderer[] { interactImage.gameObject.GetComponent<CanvasRenderer>(), examineImage.gameObject.GetComponent<CanvasRenderer>(), mouthImage.gameObject.GetComponent<CanvasRenderer>() };
-        foreach (CanvasRenderer canvas in canvasRenderers)
-        {
+        foreach(CanvasRenderer canvas in canvasRenderers) {
             canvas.SetAlpha(0);
         }
 
         showingMenu = false;
+        Extents = Screen.height / 8;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
+    void Update() {
         ray = cam.ScreenPointToRay(Input.mousePosition);
 
         ShowMenuOnMouseClick();
 
-        for (int i = 0; i < canvasRenderers.Length; i++)
-        {
-            if (canvasRenderers[i].GetAlpha() <= 0.05f)
-            {
+        for(int i = 0; i < canvasRenderers.Length; i++) {
+            if(canvasRenderers[i].GetAlpha() <= 0.05f) {
                 canvasRenderers[i].SetAlpha(0);
                 middleImage.gameObject.SetActive(false);
             }
         }
 
     }
-    void MoveOptionsMenu()
-    {
+    void MoveOptionsMenu() {
         middleImage.gameObject.transform.position = Input.mousePosition;
+        if(middleImage.gameObject.transform.position.y + Extents > Screen.height) {
+            middleImage.gameObject.transform.position = new Vector3(middleImage.gameObject.transform.position.x,
+                Screen.height - Extents, middleImage.gameObject.transform.position.z);
+        }
     }
 
-    void ShowMenuOnMouseClick()
-    {
-        if (Physics.Raycast(ray, out hit))
-        {
-            if (hit.collider.tag == "Interactable" && !showingMenu)
-            {
-                if (Input.GetMouseButtonDown(0))
-                {
+    public void ShowMenuOnMouseClick(bool overrule = false, ItemInteraction item = null) {
+        if(Physics.Raycast(ray, out hit) && !overrule) {
+            if(hit.collider.tag == "Interactable" && !showingMenu) {
+                if(Input.GetMouseButtonDown(0)) {
+                    currentItem = hit.collider.gameObject.GetComponent<ItemInteraction>();
                     showingMenu = true;
 
                     middleImage.gameObject.SetActive(true);
-                    for (int i = 0; i < optionsImages.Length; i++)
-                    {
+                    for(int i = 0; i < optionsImages.Length; i++) {
                         canvasRenderers[i].SetAlpha(0);
                         optionsImages[i].CrossFadeAlpha(1, 0.25f, false);
                         MoveOptionsMenu();
                     }
-                }              
-            }            
-            /*if (hit.collider.tag == "NotInteractable")
-            {
-                for (int i = 0; i < optionsImages.Length; i++)
-                {
-                    optionsImages[i].CrossFadeAlpha(0, 0.25f, false);
                 }
-            }*/
+            }
         }
-        if (Input.GetMouseButtonDown(1))
+        if(overrule) {
+            print("made it");
+            print(item.name);
+            currentItem = item;
+            showingMenu = true;
+
+            middleImage.gameObject.SetActive(true);
+            for(int i = 0; i < optionsImages.Length; i++) {
+                canvasRenderers[i].SetAlpha(0);
+                optionsImages[i].CrossFadeAlpha(1, 0.25f, false);
+                MoveOptionsMenu();
+            }
+        }
+        /*if (hit.collider.tag == "NotInteractable")
         {
             for (int i = 0; i < optionsImages.Length; i++)
             {
+                optionsImages[i].CrossFadeAlpha(0, 0.25f, false);
+            }
+        }*/
+
+        if(Input.GetMouseButtonDown(1)) {
+            currentItem = null;
+            for(int i = 0; i < optionsImages.Length; i++) {
                 optionsImages[i].CrossFadeAlpha(0, 0.25f, false);
                 showingMenu = false;
             }
@@ -92,35 +104,33 @@ public class RadialMenu : MonoBehaviour
     }
 
 
-    public void InteractButton()
-    {
-        for (int i = 0; i < optionsImages.Length; i++)
-        {
+    public void InteractButton() {
+        for(int i = 0; i < optionsImages.Length; i++) {
             optionsImages[i].CrossFadeAlpha(0, 0.25f, false);
             showingMenu = false;
         }
-        Debug.Log("InteractButton Pressed");
+        if(!currentItem.Name.Contains("in inventory"))inventory.Add(new Item(currentItem.Name, currentItem.Eyes, currentItem.Mouth, currentItem.Image, currentItem));
+        currentItem.gameObject.tag = "Untagged";
+        currentItem.gameObject.GetComponent<GlowObject>().GlowColor = Color.black;
+        currentItem = null;
+    }
+
+    public void ExamineButton() {
+        for(int i = 0; i < optionsImages.Length; i++) {
+            optionsImages[i].CrossFadeAlpha(0, 0.25f, false);
+            showingMenu = false;
+        }
+        Debug.Log(currentItem.Eyes);
+        currentItem = null;
 
     }
 
-    public void ExamineButton()
-    {
-        for (int i = 0; i < optionsImages.Length; i++)
-        {
+    public void MouthButton() {
+        for(int i = 0; i < optionsImages.Length; i++) {
             optionsImages[i].CrossFadeAlpha(0, 0.25f, false);
             showingMenu = false;
         }
-        Debug.Log("Examine Pressed");
-
-    }
-
-    public void MouthButton()
-    {
-        for (int i = 0; i < optionsImages.Length; i++)
-        {
-            optionsImages[i].CrossFadeAlpha(0, 0.25f, false);
-            showingMenu = false;
-        }
-        Debug.Log("MouthButton Pressed");
+        Debug.Log(currentItem.Mouth);
+        currentItem = null;
     }
 }
