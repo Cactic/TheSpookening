@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using UnityEngine.AI;
 
 public class RadialMenu : MonoBehaviour {
     [SerializeField] private GameObject middleImage;
@@ -17,10 +18,13 @@ public class RadialMenu : MonoBehaviour {
     CanvasRenderer[] canvasRenderers;
 
     ItemInteraction currentItem;
+    public NavMeshAgent agent;
 
     [SerializeField] Inventory inventory;
 
-    bool showingMenu;
+    public bool showingMenu;
+    bool playerMoving;
+
 
     float Extents;
 
@@ -34,6 +38,7 @@ public class RadialMenu : MonoBehaviour {
 
         showingMenu = false;
         Extents = Screen.height / 8;
+        playerMoving = false;
     }
 
     void Update() {
@@ -47,28 +52,46 @@ public class RadialMenu : MonoBehaviour {
                 middleImage.gameObject.SetActive(false);
             }
         }
+        if (playerMoving)
+        {
+            if (!agent.pathPending)
+            {
+                if (agent.remainingDistance <= agent.stoppingDistance)
+                {
+                    if (!agent.hasPath || agent.velocity.sqrMagnitude == 0f)
+                    {
+                        showingMenu = true;
+                        // Done
+                        showingMenu = true;
+                        middleImage.gameObject.SetActive(true);
 
-    }
+                        for (int i = 0; i < optionsImages.Length; i++)
+                        {
+                            canvasRenderers[i].SetAlpha(0);
+                            optionsImages[i].CrossFadeAlpha(1, 0.25f, false);
+                            MoveOptionsMenu();
+                        }
+                        playerMoving = false;
+                    }
+                }
+            }
+        }
     void MoveOptionsMenu() {
-        middleImage.gameObject.transform.position = Input.mousePosition;
+            middleImage.gameObject.transform.position = Input.mousePosition;
         if(middleImage.gameObject.transform.position.y + Extents > Screen.height) {
             middleImage.gameObject.transform.position = new Vector3(middleImage.gameObject.transform.position.x,
                 Screen.height - Extents, middleImage.gameObject.transform.position.z);
         }
-    }
+        }
 
     public void ShowMenuOnMouseClick(bool overrule = false, ItemInteraction item = null) {
         if(Physics.Raycast(ray, out hit) && !overrule) {
             if(hit.collider.tag == "Interactable" && !showingMenu) {
                 if(Input.GetMouseButtonDown(0)) {
                     currentItem = hit.collider.gameObject.GetComponent<ItemInteraction>();
-                    showingMenu = true;
+                        playerMoving = true;
 
-                    middleImage.gameObject.SetActive(true);
-                    for(int i = 0; i < optionsImages.Length; i++) {
-                        canvasRenderers[i].SetAlpha(0);
-                        optionsImages[i].CrossFadeAlpha(1, 0.25f, false);
-                        MoveOptionsMenu();
+
                     }
                 }
             }
