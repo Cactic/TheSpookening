@@ -1,59 +1,21 @@
 fileFormatVersion: 2
-guid: 854d570fe738e0b4bb97602a57f400dd
+guid: 47c940f11b594464091df9f623551af5
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: Box001
-    100002: //RootNode
-    400000: Box001
-    400002: //RootNode
-    2100000: Material__28
-    2100002: Material__27
-    2100004: Material__26
-    2100006: Material__30
-    2100008: Material__29
-    2100010: Material__31
-    2100012: Material__25
-    2100014: Box001Mat
-    2300000: Box001
-    3300000: Box001
-    4300000: Box001
+    100000: //RootNode
+    400000: //RootNode
+    2100000: spk_door_Material__74
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: Box004
+    6400000: //RootNode
   externalObjects:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Material__25
-    second: {fileID: 2100000, guid: 1f044742ea862954e9ac46afb55909e4, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Material__26
-    second: {fileID: 2100000, guid: d0088e45804523549867166fd4706b95, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Material__27
-    second: {fileID: 2100000, guid: d0088e45804523549867166fd4706b95, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Material__28
-    second: {fileID: 2100000, guid: d0088e45804523549867166fd4706b95, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Material__29
-    second: {fileID: 2100000, guid: d0088e45804523549867166fd4706b95, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Material__30
-    second: {fileID: 2100000, guid: d0088e45804523549867166fd4706b95, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Material__31
-    second: {fileID: 2100000, guid: d0088e45804523549867166fd4706b95, type: 2}
+      name: spk_door_Material__74
+    second: {fileID: 2100000, guid: 64dd5760a8a7f974693cd1f3aec4601e, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -86,7 +48,7 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
-    addColliders: 0
+    addColliders: 1
     useSRGBMaterialColor: 1
     importVisibility: 1
     importBlendShapes: 1

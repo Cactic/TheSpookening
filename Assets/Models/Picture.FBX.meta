@@ -1,62 +1,26 @@
 fileFormatVersion: 2
-guid: e4df7a946c5afda4093d6ce1a9b36097
+guid: 3cc8d69109ee6ab46ac068ec526efe06
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: Box003
-    100002: //RootNode
-    400000: Box003
-    400002: //RootNode
-    2100000: Material__49
-    2100002: Material__50
-    2100004: Material__61
-    2100006: spk_room1_door_Material__49
-    2100008: spk_room1_door_Material__50
-    2100010: spk_room1_door_Material__61
-    2100012: Box003Mat
-    2100014: Material__47
-    2100016: spk_room1_door_spk_room1_door_Material__50
-    2100018: Material__59
-    2300000: Box003
-    3300000: Box003
-    4300000: Box003
-    6400000: Box003
+    100000: //RootNode
+    400000: //RootNode
+    2100000: spk_picture_Material__26
+    2100002: spk_picture_Material__27
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: Box001
   externalObjects:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Box003Mat
-    second: {fileID: 2100000, guid: 6582aaba61977a34aba62a97bab686a1, type: 2}
+      name: spk_picture_Material__26
+    second: {fileID: 2100000, guid: d0088e45804523549867166fd4706b95, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Material__47
-    second: {fileID: 2100000, guid: 6582aaba61977a34aba62a97bab686a1, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Material__49
-    second: {fileID: 2100000, guid: 6582aaba61977a34aba62a97bab686a1, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Material__61
-    second: {fileID: 2100000, guid: 41cb6b44a003af3409940043d1105607, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: spk_room1_door_Material__49
-    second: {fileID: 2100000, guid: 6582aaba61977a34aba62a97bab686a1, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: spk_room1_door_Material__61
-    second: {fileID: 2100000, guid: 41cb6b44a003af3409940043d1105607, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: spk_room1_door_spk_room1_door_Material__50
-    second: {fileID: 2100000, guid: 41cb6b44a003af3409940043d1105607, type: 2}
+      name: spk_picture_Material__27
+    second: {fileID: 2100000, guid: 1f044742ea862954e9ac46afb55909e4, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -89,7 +53,7 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
-    addColliders: 1
+    addColliders: 0
     useSRGBMaterialColor: 1
     importVisibility: 1
     importBlendShapes: 1

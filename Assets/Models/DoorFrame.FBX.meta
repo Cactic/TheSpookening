@@ -1,17 +1,21 @@
 fileFormatVersion: 2
-guid: 4ad48a14ee62eed489a05eee4ff2bc56
+guid: 52f77cb38e4c3e540b753c3a1d0bfb79
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: Sphere001
-    100002: //RootNode
-    400000: Sphere001
-    400002: //RootNode
-    2100000: Material__32
-    2300000: Sphere001
-    3300000: Sphere001
-    4300000: Sphere001
-  externalObjects: {}
+    100000: //RootNode
+    400000: //RootNode
+    2100000: spk_doorframe_wire_177028149
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: Box005
+    6400000: //RootNode
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: spk_doorframe_wire_177028149
+    second: {fileID: 2100000, guid: d0088e45804523549867166fd4706b95, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -44,7 +48,7 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
-    addColliders: 0
+    addColliders: 1
     useSRGBMaterialColor: 1
     importVisibility: 1
     importBlendShapes: 1

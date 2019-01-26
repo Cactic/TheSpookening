@@ -1,27 +1,19 @@
 fileFormatVersion: 2
-guid: fd7f320e0d3fc994d9d772d59d56ae9e
+guid: e808c6a42ec5aac46acc22bfabfd072e
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: Cylinder001
-    100002: //RootNode
-    400000: Cylinder001
-    400002: //RootNode
-    2100000: Material__75
-    2100002: Cylinder001Mat
-    2300000: Cylinder001
-    3300000: Cylinder001
+    100000: //RootNode
+    400000: //RootNode
+    2100000: spk_rug_Material__75
+    2300000: //RootNode
+    3300000: //RootNode
     4300000: Cylinder001
   externalObjects:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Cylinder001Mat
-    second: {fileID: 2100000, guid: 6f90ee0d4d9e43142af92454e152070d, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Material__75
+      name: spk_rug_Material__75
     second: {fileID: 2100000, guid: 6f90ee0d4d9e43142af92454e152070d, type: 2}
   materials:
     importMaterials: 1

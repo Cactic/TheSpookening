@@ -1,29 +1,33 @@
 fileFormatVersion: 2
-guid: ca351bc0be6812341812db928131be36
+guid: ed9f6ba9d6134994c8c624be409c252e
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: Box004
-    100002: //RootNode
-    400000: Box004
-    400002: //RootNode
-    2100000: Material__74
-    2100002: Box004Mat
-    2300000: Box004
-    3300000: Box004
-    4300000: Box004
-    6400000: Box004
+    100000: //RootNode
+    400000: //RootNode
+    2100000: spk_room1_door_Material__47
+    2100002: spk_room1_door_spk_room1_door_spk_room1_door_Material__50
+    2100004: spk_room1_door_Material__59
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: Box003
+    6400000: //RootNode
   externalObjects:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Box004Mat
-    second: {fileID: 2100000, guid: 64dd5760a8a7f974693cd1f3aec4601e, type: 2}
+      name: spk_room1_door_Material__47
+    second: {fileID: 2100000, guid: 6582aaba61977a34aba62a97bab686a1, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Material__74
-    second: {fileID: 2100000, guid: 64dd5760a8a7f974693cd1f3aec4601e, type: 2}
+      name: spk_room1_door_Material__59
+    second: {fileID: 2100000, guid: 41cb6b44a003af3409940043d1105607, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: spk_room1_door_spk_room1_door_spk_room1_door_Material__50
+    second: {fileID: 2100000, guid: 41cb6b44a003af3409940043d1105607, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
