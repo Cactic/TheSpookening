@@ -12,19 +12,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71c1514a6bd24e1e882cebbe1904ce04, type: 3}
   m_Name: SF Atarian System Bold SDF
   m_EditorClassIdentifier: 
-  hashCode: 0
+  hashCode: -848821884
   material: {fileID: 21643953506747182}
-  materialHashCode: 0
+  materialHashCode: -1509157489
   fontAssetType: 1
   m_fontInfo:
     Name: SF Atarian System
     PointSize: 83
-    Scale: 0
+    Scale: 1
     CharacterCount: 92
     LineHeight: 83
     Baseline: 0
     Ascender: 69.1875
-    CapHeight: 0
+    CapHeight: 56
     Descender: -13.875
     CenterLine: 0
     SuperscriptOffset: 69.1875
@@ -34,7 +34,7 @@ MonoBehaviour:
     UnderlineThickness: 1.3833334
     strikethrough: 20.113636
     strikethroughThickness: 1.3833334
-    TabWidth: 0
+    TabWidth: 207.5
     Padding: 5
     AtlasWidth: 512
     AtlasHeight: 512
@@ -43,10 +43,10 @@ MonoBehaviour:
   - id: 32
     x: 6
     y: 517
-    width: 0
-    height: 0
+    width: 20.75
+    height: 83.0625
     xOffset: 0
-    yOffset: 0
+    yOffset: 69.1875
     xAdvance: 20.75
     scale: 1
   - id: 33
@@ -937,7 +937,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: SF Atarian System Bold SDF Material
-  m_Shader: {fileID: 4800000, guid: 68e6db2ebdc24f95958faec2be5558d6, type: 3}
+  m_Shader: {fileID: 4800000, guid: 85187c2149c549c5b33f0cdb02836b17, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -996,9 +996,9 @@ Material:
     - _OutlineWidth: 0
     - _PerspectiveFilter: 0.875
     - _Reflectivity: 10
-    - _ScaleRatioA: 1
-    - _ScaleRatioB: 1
-    - _ScaleRatioC: 1
+    - _ScaleRatioA: 0.8333333
+    - _ScaleRatioB: 0.6770833
+    - _ScaleRatioC: 0.6770833
     - _ScaleX: 1
     - _ScaleY: 1
     - _ShaderFlags: 0
@@ -1014,14 +1014,16 @@ Material:
     - _UnderlayOffsetX: 0
     - _UnderlayOffsetY: 0
     - _UnderlaySoftness: 0
+    - _UseUIAlphaClip: 0
     - _VertexOffsetX: 0
     - _VertexOffsetY: 0
     - _WeightBold: 0.75
     - _WeightNormal: 0
     m_Colors:
     - _ClipRect: {r: -32767, g: -32767, b: 32767, a: 32767}
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EnvMatrixRotation: {r: 0, g: 0, b: 0, a: 0}
-    - _FaceColor: {r: 1, g: 1, b: 1, a: 1}
+    - _FaceColor: {r: 0, g: 0, b: 0, a: 1}
     - _GlowColor: {r: 0, g: 1, b: 0, a: 0.5}
     - _MaskCoord: {r: 0, g: 0, b: 32767, a: 32767}
     - _OutlineColor: {r: 0, g: 0, b: 0, a: 1}
