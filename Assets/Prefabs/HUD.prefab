@@ -327,6 +327,7 @@ MonoBehaviour:
   Red: {fileID: 1977590846}
   Green: {fileID: 205474069}
   Blue: {fileID: 88552028}
+  RGB: {fileID: 1778678732}
 --- !u!1 &223640708
 GameObject:
   m_ObjectHideFlags: 0

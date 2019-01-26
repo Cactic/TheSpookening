@@ -11,6 +11,8 @@ public class RGBDefiner : MonoBehaviour {
     Slider Green;
     [SerializeField]
     Slider Blue;
+    [SerializeField]
+    RGBChanger RGB;
 
     private void Start() {
         Red.value = GlobalSettings.Red;
@@ -23,14 +25,17 @@ public class RGBDefiner : MonoBehaviour {
 
     public void ChangeRed() {
         GlobalSettings.Red = Red.value;
+        RGB.UpdateColor();
     }
 
     public void ChangeGreen() {
         GlobalSettings.Green = Green.value;
+        RGB.UpdateColor();
     }
 
     public void ChangeBlue() {
         GlobalSettings.Blue = Blue.value;
+        RGB.UpdateColor();
     }
 
 

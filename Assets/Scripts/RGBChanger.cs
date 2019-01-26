@@ -18,9 +18,10 @@ public class RGBChanger : MonoBehaviour {
         for(int i = 0; i < tempObjects.Length; i++) {
             HUDImages[i] = tempObjects[i].GetComponent<Image>();
         }
+        UpdateColor();
     }
     
-    void Update() {
+    public void UpdateColor() {
         foreach(Image img in HUDImages) {
             img.color = new Color(GlobalSettings.Red, GlobalSettings.Green, GlobalSettings.Blue, 0.6f);
         }
