@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Slot Images
   - RGBable
+  - Interactable
+  - MiddleImage
+  - NotInteractable
   layers:
   - Default
   - TransparentFX
