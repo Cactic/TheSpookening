@@ -133,12 +133,15 @@ public class RadialMenu : MonoBehaviour {
             optionsImages[i].CrossFadeAlpha(0, 0.25f, false);
             showingMenu = false;
         }
+        print(currentItem.Hand.Length);
         if(currentItem != null && currentItem.Hand.Length >= 1) {
             TextController.GetComponent<DialogueManager>().StartDialogue(currentItem.Hand);
+            currentItem = null;
             return;
         }
         if(currentGhost != null && currentGhost.Hand.Length >= 1) {
             TextController.GetComponent<DialogueManager>().StartDialogue(currentGhost.Hand);
+            currentGhost = null;
             return;
         }
         if(!currentItem.Name.Contains("in inventory")) inventory.Add(new Item(currentItem.Name, currentItem.Eyes, currentItem.Mouth,
