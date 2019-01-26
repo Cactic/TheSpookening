@@ -12,6 +12,8 @@ public class RadialMenu : MonoBehaviour {
     [SerializeField] private Image mouthImage;
     [SerializeField] private Camera cam;
 
+    public GameObject TextController;
+
     Ray ray;
     RaycastHit hit;
     Image[] optionsImages;
@@ -30,6 +32,7 @@ public class RadialMenu : MonoBehaviour {
 
     // Start is called before the first frame update
     void Start() {
+        gameObject.SetActive(true);
         optionsImages = new Image[] { interactImage, examineImage, mouthImage };
         canvasRenderers = new CanvasRenderer[] { interactImage.gameObject.GetComponent<CanvasRenderer>(), examineImage.gameObject.GetComponent<CanvasRenderer>(), mouthImage.gameObject.GetComponent<CanvasRenderer>() };
         foreach(CanvasRenderer canvas in canvasRenderers) {
@@ -92,9 +95,8 @@ public class RadialMenu : MonoBehaviour {
             }
         }
         if(overrule) {
-            print("made it");
-            print(item.name);
             currentItem = item;
+            print(item.Hand);
             showingMenu = true;
 
             middleImage.gameObject.SetActive(true);
@@ -127,7 +129,12 @@ public class RadialMenu : MonoBehaviour {
             optionsImages[i].CrossFadeAlpha(0, 0.25f, false);
             showingMenu = false;
         }
-        if(!currentItem.Name.Contains("in inventory")) inventory.Add(new Item(currentItem.Name, currentItem.Eyes, currentItem.Mouth, currentItem.Image, currentItem));
+        if(currentItem.Hand.Length >= 1) {
+            TextController.GetComponent<DialogueManager>().StartDialogue(currentItem.Hand);
+            return;
+        }
+        if(!currentItem.Name.Contains("in inventory")) inventory.Add(new Item(currentItem.Name, currentItem.Eyes, currentItem.Mouth,
+            currentItem.Hand, currentItem.HandAfterPickup, currentItem.Image, currentItem));
         currentItem.gameObject.tag = "Untagged";
         currentItem.gameObject.GetComponent<GlowObject>().GlowColor = Color.black;
         currentItem = null;
@@ -138,7 +145,7 @@ public class RadialMenu : MonoBehaviour {
             optionsImages[i].CrossFadeAlpha(0, 0.25f, false);
             showingMenu = false;
         }
-        Debug.Log(currentItem.Eyes);
+        TextController.GetComponent<DialogueManager>().StartDialogue(currentItem.Eyes);
         currentItem = null;
 
     }
@@ -148,7 +155,7 @@ public class RadialMenu : MonoBehaviour {
             optionsImages[i].CrossFadeAlpha(0, 0.25f, false);
             showingMenu = false;
         }
-        Debug.Log(currentItem.Mouth);
+        TextController.GetComponent<DialogueManager>().StartDialogue(currentItem.Mouth);
         currentItem = null;
     }
 }

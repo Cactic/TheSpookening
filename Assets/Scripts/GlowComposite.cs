@@ -4,7 +4,7 @@
 [RequireComponent(typeof(Camera))]
 public class GlowComposite : MonoBehaviour
 {
-	[Range (0, 5)]
+	[Range (0, 10)]
 	public float Intensity = 5;
 
 	private Material _compositeMat;

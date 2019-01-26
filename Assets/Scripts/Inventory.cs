@@ -43,10 +43,11 @@ public class Inventory : MonoBehaviour {
                 s.Empty = false;
                 Images[s.SlotNumber].gameObject.AddComponent<ItemInteraction>();
                 ItemInteraction interaction = Images[s.SlotNumber].gameObject.GetComponent<ItemInteraction>();
-                print(item.ItemInteraction.Mouth);
                 interaction.Name = item.ItemInteraction.Name;
                 interaction.Mouth = item.ItemInteraction.Mouth;
                 interaction.Eyes = item.ItemInteraction.Eyes;
+                interaction.HandAfterPickup = item.ItemInteraction.HandAfterPickup;
+                interaction.Hand = item.ItemInteraction.HandAfterPickup;
                 interaction.Image = item.ItemInteraction.Image;
 
                 Images[s.SlotNumber].gameObject.GetComponent<Button>().onClick.AddListener(delegate { OnUseItem(item.ItemInteraction); });
@@ -58,7 +59,6 @@ public class Inventory : MonoBehaviour {
 
     public void OnUseItem(ItemInteraction i) {
         if(!i.Name.Contains(" in inventory"))i.Name = i.Name + " in inventory";
-        print(i.Name);
         RadialMenu(i);
     }
 
