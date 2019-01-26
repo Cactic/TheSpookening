@@ -12,6 +12,8 @@ public class RadialMenu : MonoBehaviour
     [SerializeField] private Image mouthImage;
     [SerializeField] private Camera cam;
 
+    public GameObject TextController;
+
     Ray ray;
     RaycastHit hit;
     Image[] optionsImages;
@@ -73,13 +75,6 @@ public class RadialMenu : MonoBehaviour
                     }
                 }              
             }            
-            /*if (hit.collider.tag == "NotInteractable")
-            {
-                for (int i = 0; i < optionsImages.Length; i++)
-                {
-                    optionsImages[i].CrossFadeAlpha(0, 0.25f, false);
-                }
-            }*/
         }
         if (Input.GetMouseButtonDown(1))
         {
@@ -99,8 +94,7 @@ public class RadialMenu : MonoBehaviour
             optionsImages[i].CrossFadeAlpha(0, 0.25f, false);
             showingMenu = false;
         }
-        Debug.Log("InteractButton Pressed");
-
+        TextController.GetComponent<Dialogue>().StartDialogue(new string[] {"This table is to dirty.", "I don't want to touch it"});  
     }
 
     public void ExamineButton()
@@ -110,7 +104,7 @@ public class RadialMenu : MonoBehaviour
             optionsImages[i].CrossFadeAlpha(0, 0.25f, false);
             showingMenu = false;
         }
-        Debug.Log("Examine Pressed");
+        TextController.GetComponent<Dialogue>().StartDialogue(new string[] { "This is a table.","it is really dirty though"});
 
     }
 
@@ -121,6 +115,6 @@ public class RadialMenu : MonoBehaviour
             optionsImages[i].CrossFadeAlpha(0, 0.25f, false);
             showingMenu = false;
         }
-        Debug.Log("MouthButton Pressed");
+        TextController.GetComponent<Dialogue>().StartDialogue(new string[] { "I am not going to lick this" });
     }
 }
