@@ -1,5 +1,0 @@
-sceneSetups:
-- path: C:/Users/Claudia/Desktop/NavMesh-Tutorial-master/NavMesh-Tutorial-master/NavMesh
-    Example Project/Assets/Example01 - Basics.unity
-  isLoaded: 1
-  isActive: 1
