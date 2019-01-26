@@ -1,16 +1,55 @@
 fileFormatVersion: 2
-guid: 52f77cb38e4c3e540b753c3a1d0bfb79
+guid: 0f1e67a11596ec741b5a062983c7b926
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
     400000: //RootNode
-    2100000: spk_doorframe_wire_177028149
+    2100000: 'Material #67'
+    2100002: 'Material #2'
+    2100004: 'Material #66'
+    2100006: 'Material #61'
+    2100008: 'Material #60'
+    2100010: 'Material #59'
+    2100012: 'Material #128'
+    2100014: 'Material #140'
+    2100016: 'Material #164'
+    2100018: 'Material #162'
+    2100020: 'Material #161'
     2300000: //RootNode
     3300000: //RootNode
-    4300000: Box005
-    9500000: //RootNode
-  externalObjects: {}
+    4300000: Box001
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 'Material #128'
+    second: {fileID: 2100000, guid: c6a25f9a20c75da47948fca41c50cd64, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 'Material #140'
+    second: {fileID: 2100000, guid: 64dd5760a8a7f974693cd1f3aec4601e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 'Material #2'
+    second: {fileID: 2100000, guid: 6582aaba61977a34aba62a97bab686a1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 'Material #59'
+    second: {fileID: 2100000, guid: d47203d6c545db14b836a84d10a4c87f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 'Material #60'
+    second: {fileID: 2100000, guid: d0088e45804523549867166fd4706b95, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 'Material #66'
+    second: {fileID: 2100000, guid: 7cca4e0c6d725fc46be156002646a3e7, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -62,8 +101,8 @@ ModelImporter:
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
     useFileScale: 1
-    previousCalculatedGlobalScale: 0.0254
-    hasPreviousCalculatedGlobalScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
@@ -90,7 +129,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 2
+  animationType: 0
   humanoidOversampling: 1
   additionalBone: 0
   userData: 

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using UnityEngine.AI;
 
 public class RadialMenu : MonoBehaviour
 {
@@ -12,14 +13,16 @@ public class RadialMenu : MonoBehaviour
     [SerializeField] private Image mouthImage;
     [SerializeField] private Camera cam;
 
-    public GameObject TextController;
-
     Ray ray;
     RaycastHit hit;
     Image[] optionsImages;
     CanvasRenderer[] canvasRenderers;
 
-    bool showingMenu;
+    public NavMeshAgent agent;
+
+    public bool showingMenu;
+    bool playerMoving;
+
 
     // Start is called before the first frame update
     void Start()
@@ -32,6 +35,7 @@ public class RadialMenu : MonoBehaviour
         }
 
         showingMenu = false;
+        playerMoving = false;
     }
 
     // Update is called once per frame
@@ -49,32 +53,57 @@ public class RadialMenu : MonoBehaviour
                 middleImage.gameObject.SetActive(false);
             }
         }
-
-    }
-    void MoveOptionsMenu()
-    {
-        middleImage.gameObject.transform.position = Input.mousePosition;
-    }
-
-    void ShowMenuOnMouseClick()
-    {
-        if (Physics.Raycast(ray, out hit))
+        if (playerMoving)
         {
-            if (hit.collider.tag == "Interactable" && !showingMenu)
+            if (!agent.pathPending)
             {
-                if (Input.GetMouseButtonDown(0))
+                if (agent.remainingDistance <= agent.stoppingDistance)
                 {
-                    showingMenu = true;
-
-                    middleImage.gameObject.SetActive(true);
-                    for (int i = 0; i < optionsImages.Length; i++)
+                    if (!agent.hasPath || agent.velocity.sqrMagnitude == 0f)
                     {
-                        canvasRenderers[i].SetAlpha(0);
-                        optionsImages[i].CrossFadeAlpha(1, 0.25f, false);
-                        MoveOptionsMenu();
+                        showingMenu = true;
+                        // Done
+                        showingMenu = true;
+                        middleImage.gameObject.SetActive(true);
+
+                        for (int i = 0; i < optionsImages.Length; i++)
+                        {
+                            canvasRenderers[i].SetAlpha(0);
+                            optionsImages[i].CrossFadeAlpha(1, 0.25f, false);
+                            MoveOptionsMenu();
+                        }
+                        playerMoving = false;
                     }
-                }              
-            }            
+                }
+            }
+        }
+
+        void MoveOptionsMenu()
+        {
+            middleImage.gameObject.transform.position = Input.mousePosition;
+        }
+
+        void ShowMenuOnMouseClick()
+        {
+            if (Physics.Raycast(ray, out hit))
+            {
+                if (hit.collider.tag == "Interactable" && !showingMenu)
+                {
+                    if (Input.GetMouseButtonDown(0))
+                    {
+                        playerMoving = true;
+
+
+                    }
+                }
+            }
+            /*if (hit.collider.tag == "NotInteractable")
+            {
+                for (int i = 0; i < optionsImages.Length; i++)
+                {
+                    optionsImages[i].CrossFadeAlpha(0, 0.25f, false);
+                }
+            }*/
         }
         if (Input.GetMouseButtonDown(1))
         {
@@ -94,7 +123,8 @@ public class RadialMenu : MonoBehaviour
             optionsImages[i].CrossFadeAlpha(0, 0.25f, false);
             showingMenu = false;
         }
-        TextController.GetComponent<Dialogue>().StartDialogue(new string[] {"This table is to dirty.", "I don't want to touch it"});  
+        Debug.Log("InteractButton Pressed");
+
     }
 
     public void ExamineButton()
@@ -104,7 +134,7 @@ public class RadialMenu : MonoBehaviour
             optionsImages[i].CrossFadeAlpha(0, 0.25f, false);
             showingMenu = false;
         }
-        TextController.GetComponent<Dialogue>().StartDialogue(new string[] { "This is a table.","it is really dirty though"});
+        Debug.Log("Examine Pressed");
 
     }
 
@@ -115,6 +145,6 @@ public class RadialMenu : MonoBehaviour
             optionsImages[i].CrossFadeAlpha(0, 0.25f, false);
             showingMenu = false;
         }
-        TextController.GetComponent<Dialogue>().StartDialogue(new string[] { "I am not going to lick this" });
+        Debug.Log("MouthButton Pressed");
     }
 }
