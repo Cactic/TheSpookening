@@ -22,7 +22,7 @@ public class RGBChanger : MonoBehaviour {
     
     void Update() {
         foreach(Image img in HUDImages) {
-            img.color = new Color(GlobalSettings.Red, GlobalSettings.Green, GlobalSettings.Blue);
+            img.color = new Color(GlobalSettings.Red, GlobalSettings.Green, GlobalSettings.Blue, 0.6f);
         }
     }
 }
