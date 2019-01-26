@@ -6,9 +6,11 @@ ModelImporter:
     100000: //RootNode
     400000: //RootNode
     2100000: spk_doorframe_wire_177028149
+    2100002: 'Material #25'
     2300000: //RootNode
     3300000: //RootNode
     4300000: Box005
+    7400000: Take 001
     9500000: //RootNode
   externalObjects: {}
   materials:
