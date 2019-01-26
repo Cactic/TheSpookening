@@ -40,7 +40,7 @@ public class ClickToMove : MonoBehaviour
                 {
                     // Done
                     anim.SetFloat("Speed", 0);
-
+        
                 }
             }
         }
