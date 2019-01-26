@@ -9,6 +9,8 @@ TagManager:
   - Interactable
   - MiddleImage
   - NotInteractable
+  - Dialogue
+  - Ghost
   layers:
   - Default
   - TransparentFX

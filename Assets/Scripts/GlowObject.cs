@@ -12,8 +12,6 @@ public class GlowObject : MonoBehaviour
 
     public float LerpFactor = 10;
 
-
-
     public Renderer[] Renderers
 
     {

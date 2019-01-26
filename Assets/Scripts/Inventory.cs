@@ -10,6 +10,11 @@ public class Inventory : MonoBehaviour {
 
     public Sprite testImage;
 
+    [SerializeField]
+    RadialMenu radial;
+
+    ItemInteraction item;
+
     void Start() {
         InventorySlots = new List<Slot>();
         Images = new List<Image>();
@@ -17,6 +22,7 @@ public class Inventory : MonoBehaviour {
         for(int i = 0; i < tempImages.Length; i++) {
             Images.Add(tempImages[i].GetComponent<Image>());
             InventorySlots.Add(new Slot(i, Images[i], null));
+            Images[i].gameObject.tag = "Interactable";
         }
         Draw();
     }
@@ -35,15 +41,34 @@ public class Inventory : MonoBehaviour {
             else {
                 s.Item = item;
                 s.Empty = false;
+                Images[s.SlotNumber].gameObject.AddComponent<ItemInteraction>();
+                ItemInteraction interaction = Images[s.SlotNumber].gameObject.GetComponent<ItemInteraction>();
+                interaction.Name = item.ItemInteraction.Name;
+                interaction.Mouth = item.ItemInteraction.Mouth;
+                interaction.Eyes = item.ItemInteraction.Eyes;
+                interaction.HandAfterPickup = item.ItemInteraction.HandAfterPickup;
+                interaction.Hand = item.ItemInteraction.HandAfterPickup;
+                interaction.Image = item.ItemInteraction.Image;
+
+                Images[s.SlotNumber].gameObject.GetComponent<Button>().onClick.AddListener(delegate { OnUseItem(item.ItemInteraction); });
                 break;
             }
         }
         Draw();
     }
 
+    public void OnUseItem(ItemInteraction i) {
+        if(!i.Name.Contains(" in inventory"))i.Name = i.Name + " in inventory";
+        RadialMenu(i);
+    }
+
     public void Remove(Slot slot) {
         slot.Item = null;
         Draw();
+    }
+
+    public void RadialMenu(ItemInteraction interaction) {
+        radial.ShowMenuOnMouseClick(true, interaction); 
     }
 }
 
@@ -53,6 +78,7 @@ public class Slot {
     public Image slot { get; internal set; }
     public bool Empty { get; set; }
     public Item Item { get; set; }
+    public ItemInteraction ItemInteraction{ get; set; }
 
     public Slot(int slotNumber, Image slot, Item item) {
         SlotNumber = slotNumber;
