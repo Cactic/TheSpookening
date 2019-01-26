@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using UnityEngine.AI;
 
 public class RadialMenu : MonoBehaviour
 {
@@ -17,7 +18,11 @@ public class RadialMenu : MonoBehaviour
     Image[] optionsImages;
     CanvasRenderer[] canvasRenderers;
 
-    bool showingMenu;
+    public NavMeshAgent agent;
+
+    public bool showingMenu;
+    bool playerMoving;
+
 
     // Start is called before the first frame update
     void Start()
@@ -30,6 +35,7 @@ public class RadialMenu : MonoBehaviour
         }
 
         showingMenu = false;
+        playerMoving = false;
     }
 
     // Update is called once per frame
@@ -47,32 +53,52 @@ public class RadialMenu : MonoBehaviour
                 middleImage.gameObject.SetActive(false);
             }
         }
-
-    }
-    void MoveOptionsMenu()
-    {
-        middleImage.gameObject.transform.position = Input.mousePosition;
-    }
-
-    void ShowMenuOnMouseClick()
-    {
-        if (Physics.Raycast(ray, out hit))
+        if (playerMoving)
         {
-            if (hit.collider.tag == "Interactable" && !showingMenu)
+            if (!agent.pathPending)
             {
-                if (Input.GetMouseButtonDown(0))
+                if (agent.remainingDistance <= agent.stoppingDistance)
                 {
-                    showingMenu = true;
-
-                    middleImage.gameObject.SetActive(true);
-                    for (int i = 0; i < optionsImages.Length; i++)
+                    if (!agent.hasPath || agent.velocity.sqrMagnitude == 0f)
                     {
-                        canvasRenderers[i].SetAlpha(0);
-                        optionsImages[i].CrossFadeAlpha(1, 0.25f, false);
-                        MoveOptionsMenu();
+                        showingMenu = true;
+                        // Done
+                        showingMenu = true;
+                        Debug.Log("wow");
+                        middleImage.gameObject.SetActive(true);
+
+                        for (int i = 0; i < optionsImages.Length; i++)
+                        {
+                            canvasRenderers[i].SetAlpha(0);
+                            optionsImages[i].CrossFadeAlpha(1, 0.25f, false);
+                            MoveOptionsMenu();
+                        }
+
+                        playerMoving = false;
                     }
-                }              
-            }            
+                }
+            }
+        }
+
+        void MoveOptionsMenu()
+        {
+            middleImage.gameObject.transform.position = Input.mousePosition;
+        }
+
+        void ShowMenuOnMouseClick()
+        {
+            if (Physics.Raycast(ray, out hit))
+            {
+                if (hit.collider.tag == "Interactable" && !showingMenu)
+                {
+                    if (Input.GetMouseButtonDown(0))
+                    {
+                        playerMoving = true;
+
+
+                    }
+                }
+            }
             /*if (hit.collider.tag == "NotInteractable")
             {
                 for (int i = 0; i < optionsImages.Length; i++)

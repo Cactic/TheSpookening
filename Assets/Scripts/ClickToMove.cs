@@ -8,22 +8,30 @@ public class ClickToMove : MonoBehaviour
     public Camera cam;
     public NavMeshAgent agent;
     public Animator anim;
+    public RaycastHit hit;
+
+    public RadialMenu thisRadialMenu;
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        //and mouse not hovering over obj.
+        if(thisRadialMenu.showingMenu == false)
         {
-            Ray ray = cam.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hit;
-
-            if (Physics.Raycast(ray, out hit))
+            if (Input.GetMouseButtonDown(0))
             {
-                //move agent
-                agent.SetDestination(hit.point);
-                anim.SetFloat("Speed", 1);
+                Ray ray = cam.ScreenPointToRay(Input.mousePosition);
+                RaycastHit hit;
 
+                if (Physics.Raycast(ray, out hit))
+                {
+                    //move agent
+                    agent.SetDestination(hit.point);
+                    anim.SetFloat("Speed", 1);
+                }
             }
         }
+        
+
         if (!agent.pathPending)
         {
             if (agent.remainingDistance <= agent.stoppingDistance)
@@ -32,6 +40,7 @@ public class ClickToMove : MonoBehaviour
                 {
                     // Done
                     anim.SetFloat("Speed", 0);
+
                 }
             }
         }
