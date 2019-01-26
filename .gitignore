@@ -14,7 +14,6 @@
 /Assets/Prefabs/Ship/Gear.mat
 /Temp/UnityLockfile
 
-
 # ===================================== #
 # Visual Studio / MonoDevelop generated #
 # ===================================== #
@@ -35,6 +34,7 @@ ExportedObj/
 
 # Unity3D generated meta files
 *.pidb.meta
+*.meta
 
 # Unity3D Generated File On Crash Reports
 sysinfo.txt
