@@ -133,11 +133,11 @@ public class RadialMenu : MonoBehaviour {
             optionsImages[i].CrossFadeAlpha(0, 0.25f, false);
             showingMenu = false;
         }
-        if(currentItem.Hand.Length >= 1) {
+        if(currentItem != null && currentItem.Hand.Length >= 1) {
             TextController.GetComponent<DialogueManager>().StartDialogue(currentItem.Hand);
             return;
         }
-        if(currentItem.Hand.Length >= 1) {
+        if(currentGhost != null && currentGhost.Hand.Length >= 1) {
             TextController.GetComponent<DialogueManager>().StartDialogue(currentGhost.Hand);
             return;
         }
@@ -166,7 +166,13 @@ public class RadialMenu : MonoBehaviour {
         }
         if(currentItem != null) TextController.GetComponent<DialogueManager>().StartDialogue(currentItem.Mouth);
         if(currentGhost != null && !currentGhost.Saveable) TextController.GetComponent<DialogueManager>().StartDialogue(currentGhost.Mouth);
-        if(currentGhost != null && currentGhost.Saveable) TextController.GetComponent<DialogueManager>().StartDialogue(currentGhost.MouthSaveable);
+        if(currentGhost != null && currentGhost.Saveable) {
+            TextController.GetComponent<DialogueManager>().StartDialogue(currentGhost.MouthSaveable);
+            currentGhost.Ghost.material = currentGhost.Happy;
+            foreach(ParticleSystem p in currentGhost.Tears) {
+                p.Stop();
+            }
+        }
         currentItem = null;
     }
 }

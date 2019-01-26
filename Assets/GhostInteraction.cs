@@ -10,4 +10,8 @@ public class GhostInteraction : MonoBehaviour
     public string[] MouthSaveable;
     public string[] Hand;
     public bool Saveable;
+
+    public Renderer Ghost;
+    public Material Happy;
+    public ParticleSystem[] Tears;
 }
