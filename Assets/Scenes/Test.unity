@@ -571,7 +571,7 @@ PrefabInstance:
     - target: {fileID: 292758964155143820, guid: ea072cce6aad27044a7932279ad3d82d,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.42
+      value: 1.964
       objectReference: {fileID: 0}
     - target: {fileID: 292758964155143820, guid: ea072cce6aad27044a7932279ad3d82d,
         type: 3}
@@ -618,40 +618,49 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 135.225
       objectReference: {fileID: 0}
+    - target: {fileID: 5521000968627467226, guid: ea072cce6aad27044a7932279ad3d82d,
+        type: 3}
+      propertyPath: Mouth.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5521000968627467226, guid: ea072cce6aad27044a7932279ad3d82d,
+        type: 3}
+      propertyPath: MouthSaveable.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5521000968627467226, guid: ea072cce6aad27044a7932279ad3d82d,
+        type: 3}
+      propertyPath: Hand.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5521000968627467226, guid: ea072cce6aad27044a7932279ad3d82d,
+        type: 3}
+      propertyPath: Eyes.Array.data[0]
+      value: This ghost seems extremely sad, I wonder what could be causing such distress
+      objectReference: {fileID: 0}
+    - target: {fileID: 5521000968627467226, guid: ea072cce6aad27044a7932279ad3d82d,
+        type: 3}
+      propertyPath: Mouth.Array.data[0]
+      value: Uhm...Ghost, why are you sad?
+      objectReference: {fileID: 0}
+    - target: {fileID: 5521000968627467226, guid: ea072cce6aad27044a7932279ad3d82d,
+        type: 3}
+      propertyPath: Mouth.Array.data[1]
+      value: Hmm, no answer, I guess I will have to figure this out myself.
+      objectReference: {fileID: 0}
+    - target: {fileID: 5521000968627467226, guid: ea072cce6aad27044a7932279ad3d82d,
+        type: 3}
+      propertyPath: MouthSaveable.Array.data[0]
+      value: Come here little guy, I have the hug you so desperately need!
+      objectReference: {fileID: 0}
+    - target: {fileID: 5521000968627467226, guid: ea072cce6aad27044a7932279ad3d82d,
+        type: 3}
+      propertyPath: Hand.Array.data[0]
+      value: What good could possibly come from trying to grab a ghost? Wouldn't my
+        time be better spent trying to figure out what is wrong?
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ea072cce6aad27044a7932279ad3d82d, type: 3}
---- !u!84 &640928170
-RenderTexture:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 
-  m_ImageContentsHash:
-    serializedVersion: 2
-    Hash: 00000000000000000000000000000000
-  m_ForcedFallbackFormat: 4
-  m_DownscaleFallback: 0
-  m_Width: 401
-  m_Height: 226
-  m_AntiAliasing: 4
-  m_DepthFormat: 2
-  m_ColorFormat: 7
-  m_MipMap: 0
-  m_GenerateMips: 1
-  m_SRGB: 0
-  m_UseDynamicScale: 0
-  m_BindMS: 0
-  m_TextureSettings:
-    serializedVersion: 2
-    m_FilterMode: 1
-    m_Aniso: 1
-    m_MipBias: 0
-    m_WrapU: 1
-    m_WrapV: 1
-    m_WrapW: 1
-  m_Dimension: 2
-  m_VolumeDepth: 1
 --- !u!1001 &666355592
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -863,7 +872,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!84 &1305230102
+--- !u!84 &1575010122
 RenderTexture:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -875,8 +884,40 @@ RenderTexture:
     Hash: 00000000000000000000000000000000
   m_ForcedFallbackFormat: 4
   m_DownscaleFallback: 0
-  m_Width: 1561
-  m_Height: 367
+  m_Width: 1620
+  m_Height: 911
+  m_AntiAliasing: 4
+  m_DepthFormat: 2
+  m_ColorFormat: 7
+  m_MipMap: 0
+  m_GenerateMips: 1
+  m_SRGB: 0
+  m_UseDynamicScale: 0
+  m_BindMS: 0
+  m_TextureSettings:
+    serializedVersion: 2
+    m_FilterMode: 1
+    m_Aniso: 1
+    m_MipBias: 0
+    m_WrapU: 1
+    m_WrapV: 1
+    m_WrapW: 1
+  m_Dimension: 2
+  m_VolumeDepth: 1
+--- !u!84 &1582055945
+RenderTexture:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_ImageContentsHash:
+    serializedVersion: 2
+    Hash: 00000000000000000000000000000000
+  m_ForcedFallbackFormat: 4
+  m_DownscaleFallback: 0
+  m_Width: 346
+  m_Height: 947
   m_AntiAliasing: 4
   m_DepthFormat: 2
   m_ColorFormat: 7
@@ -1013,26 +1054,6 @@ NavMeshAgent:
     type: 3}
   m_PrefabInstance: {fileID: 1971308456}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1918930922 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1576079585290326821, guid: ea072cce6aad27044a7932279ad3d82d,
-    type: 3}
-  m_PrefabInstance: {fileID: 255039304}
-  m_PrefabAsset: {fileID: 0}
---- !u!136 &1918930923
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1918930922}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.25
-  m_Height: 1.25
-  m_Direction: 2
-  m_Center: {x: 0.00000001602038, y: 0.0016928769, z: 0.01}
 --- !u!1001 &1971308456
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1269,6 +1290,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TargetTexture
       value: 
-      objectReference: {fileID: 1305230102}
+      objectReference: {fileID: 1582055945}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 724778e0368c04045b333a3fc81b6ed4, type: 3}

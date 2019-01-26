@@ -10,6 +10,7 @@ TagManager:
   - MiddleImage
   - NotInteractable
   - Dialogue
+  - Ghost
   layers:
   - Default
   - TransparentFX
