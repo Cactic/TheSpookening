@@ -1,38 +1,20 @@
 fileFormatVersion: 2
-guid: 5c4403e38fdf2474fb85d0d69aa4e9c7
+guid: e808c6a42ec5aac46acc22bfabfd072e
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: Box001
-    100002: //RootNode
-    100004: Box003
-    400000: Box001
-    400002: //RootNode
-    400004: Box003
-    2100000: Material__25
-    2100002: Material__37
-    2100004: Material__49
-    2100006: Material__50
-    2100008: Material__61
-    2100010: Box003Mat
-    2300000: Box001
-    2300002: Box003
-    3300000: Box001
-    3300002: Box003
-    4300000: Box001
-    4300002: Box003
-    6400000: Box003
+    100000: //RootNode
+    400000: //RootNode
+    2100000: spk_rug_Material__75
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: Cylinder001
   externalObjects:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Material__49
-    second: {fileID: 2100000, guid: 6582aaba61977a34aba62a97bab686a1, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Material__61
-    second: {fileID: 2100000, guid: 41cb6b44a003af3409940043d1105607, type: 2}
+      name: spk_rug_Material__75
+    second: {fileID: 2100000, guid: 6f90ee0d4d9e43142af92454e152070d, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -65,7 +47,7 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
-    addColliders: 1
+    addColliders: 0
     useSRGBMaterialColor: 1
     importVisibility: 1
     importBlendShapes: 1
