@@ -507,7 +507,9 @@ MonoBehaviour:
   examineImage: {fileID: 9009482501949837001}
   mouthImage: {fileID: 9009482500851533395}
   cam: {fileID: 0}
+  agent: {fileID: 0}
   inventory: {fileID: 0}
+  showingMenu: 0
 --- !u!1 &9009482500851533397
 GameObject:
   m_ObjectHideFlags: 0

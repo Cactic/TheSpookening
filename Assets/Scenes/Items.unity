@@ -236,6 +236,11 @@ PrefabInstance:
       objectReference: {fileID: 578593021}
     - target: {fileID: 9009482500681996597, guid: 09a3bcf4a38454b47b75a8ff9f8184ab,
         type: 3}
+      propertyPath: agent
+      value: 
+      objectReference: {fileID: 1373780613}
+    - target: {fileID: 9009482500681996597, guid: 09a3bcf4a38454b47b75a8ff9f8184ab,
+        type: 3}
       propertyPath: inventory
       value: 
       objectReference: {fileID: 1880429866}
@@ -252,6 +257,38 @@ Light:
     type: 3}
   m_PrefabInstance: {fileID: 5846219651076429303}
   m_PrefabAsset: {fileID: 0}
+--- !u!84 &349340842
+RenderTexture:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_ImageContentsHash:
+    serializedVersion: 2
+    Hash: 00000000000000000000000000000000
+  m_ForcedFallbackFormat: 4
+  m_DownscaleFallback: 0
+  m_Width: 486
+  m_Height: 273
+  m_AntiAliasing: 4
+  m_DepthFormat: 2
+  m_ColorFormat: 7
+  m_MipMap: 0
+  m_GenerateMips: 1
+  m_SRGB: 0
+  m_UseDynamicScale: 0
+  m_BindMS: 0
+  m_TextureSettings:
+    serializedVersion: 2
+    m_FilterMode: 1
+    m_Aniso: 1
+    m_MipBias: 0
+    m_WrapU: 1
+    m_WrapV: 1
+    m_WrapW: 1
+  m_Dimension: 2
+  m_VolumeDepth: 1
 --- !u!20 &578593021 stripped
 Camera:
   m_CorrespondingSourceObject: {fileID: 5922977766031966394, guid: 724778e0368c04045b333a3fc81b6ed4,
@@ -336,38 +373,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e37c471271ceb94d9be2b039e2bcc7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!84 &1615421680
-RenderTexture:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+--- !u!195 &1373780613 stripped
+NavMeshAgent:
+  m_CorrespondingSourceObject: {fileID: 9206574634167361865, guid: 952a2c442cf5e1a45b583765f56a7eef,
+    type: 3}
+  m_PrefabInstance: {fileID: 9206574634113286098}
   m_PrefabAsset: {fileID: 0}
-  m_Name: 
-  m_ImageContentsHash:
-    serializedVersion: 2
-    Hash: 00000000000000000000000000000000
-  m_ForcedFallbackFormat: 4
-  m_DownscaleFallback: 0
-  m_Width: 300
-  m_Height: 310
-  m_AntiAliasing: 4
-  m_DepthFormat: 2
-  m_ColorFormat: 7
-  m_MipMap: 0
-  m_GenerateMips: 1
-  m_SRGB: 0
-  m_UseDynamicScale: 0
-  m_BindMS: 0
-  m_TextureSettings:
-    serializedVersion: 2
-    m_FilterMode: 1
-    m_Aniso: 1
-    m_MipBias: 0
-    m_WrapU: 1
-    m_WrapV: 1
-    m_WrapW: 1
-  m_Dimension: 2
-  m_VolumeDepth: 1
 --- !u!1001 &1621739298
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -682,6 +693,38 @@ PrefabInstance:
       objectReference: {fileID: 1281898472}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0e03c6f09adac1841b3c0df0fac2ee65, type: 3}
+--- !u!84 &1769299007
+RenderTexture:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_ImageContentsHash:
+    serializedVersion: 2
+    Hash: 00000000000000000000000000000000
+  m_ForcedFallbackFormat: 4
+  m_DownscaleFallback: 0
+  m_Width: 1620
+  m_Height: 911
+  m_AntiAliasing: 4
+  m_DepthFormat: 2
+  m_ColorFormat: 7
+  m_MipMap: 0
+  m_GenerateMips: 1
+  m_SRGB: 0
+  m_UseDynamicScale: 0
+  m_BindMS: 0
+  m_TextureSettings:
+    serializedVersion: 2
+    m_FilterMode: 1
+    m_Aniso: 1
+    m_MipBias: 0
+    m_WrapU: 1
+    m_WrapV: 1
+    m_WrapW: 1
+  m_Dimension: 2
+  m_VolumeDepth: 1
 --- !u!114 &1880429866 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5428762685309925003, guid: 0e03c6f09adac1841b3c0df0fac2ee65,
@@ -771,7 +814,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TargetTexture
       value: 
-      objectReference: {fileID: 1615421680}
+      objectReference: {fileID: 349340842}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 724778e0368c04045b333a3fc81b6ed4, type: 3}
 --- !u!1001 &8765808045594041305
@@ -915,5 +958,10 @@ PrefabInstance:
       propertyPath: cam
       value: 
       objectReference: {fileID: 578593021}
+    - target: {fileID: 9206574634167361864, guid: 952a2c442cf5e1a45b583765f56a7eef,
+        type: 3}
+      propertyPath: thisRadialMenu
+      value: 
+      objectReference: {fileID: 1281898472}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 952a2c442cf5e1a45b583765f56a7eef, type: 3}
