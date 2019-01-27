@@ -1,15 +1,23 @@
 fileFormatVersion: 2
-guid: 2faafd7c39cf18b4d83d3d729c4f9a04
-timeCreated: 1484056899
+guid: 99c9a6dffc6152a4cb58a9914a5cc74d
+timeCreated: 1467145319
 licenseType: Store
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
-    100000: //RootNode
-    400000: //RootNode
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: Cube.002
+    100000: Camera
+    100002: Cube
+    100004: Lamp
+    100006: Mirror
+    100008: //RootNode
+    400000: Camera
+    400002: Cube
+    400004: Lamp
+    400006: Mirror
+    400008: //RootNode
+    2300000: Cube
+    3300000: Cube
+    4300000: Cube
   materials:
     importMaterials: 1
     materialName: 0
@@ -17,7 +25,7 @@ ModelImporter:
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
-    resampleCurves: 1
+    resampleRotations: 1
     optimizeGameObjects: 0
     motionNodeName: 
     animationImportErrors: 
