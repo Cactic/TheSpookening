@@ -35,7 +35,7 @@ public class AudioManager : MonoBehaviour {
         if(hasPlayed[voiceOverID]) return;
         if(currentVoiceOverSource != null) currentVoiceOverSource.Stop();
         currentVoiceOver = voiceOverID;
-        hasPlayed[voiceOverID] = true;
+        //hasPlayed[voiceOverID] = true;
     }
 
     // Update is called once per frame

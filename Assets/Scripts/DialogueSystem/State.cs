@@ -30,7 +30,8 @@ public class State : MonoBehaviour
         for(int i = 0; i < dialogue.storyText.Length; i++) {
             canvas.gameObject.SetActive(true);
             text.text = dialogue.storyText[i];
-            AudioManager.Instance.PlayVoiceOver(i);
+            AudioManager.Instance.PlayVoiceOver(dialogue.audioClips[i]);
+            print(dialogue.audioClips[i]);
             isClicked = true;
 
             yield return new WaitUntil(() => Input.GetMouseButtonDown(0));
