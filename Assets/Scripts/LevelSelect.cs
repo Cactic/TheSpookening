@@ -115,6 +115,8 @@ public class LevelSelect : MonoBehaviour
         if(currentGameObject == cameraPoints[0])
         {
             SceneManager.LoadScene("LevelOne");
+            Globals.PlayingEndingFirstStory = false;
+            Globals.FirstStoryProgress = 0;
         }
         else if(currentGameObject == cameraPoints[1])
         {

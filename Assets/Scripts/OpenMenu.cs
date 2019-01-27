@@ -6,6 +6,8 @@ public class OpenMenu : MonoBehaviour {
 
     [SerializeField]
     GameObject MenuPanel;
+    [SerializeField]
+    GameObject warningMenu;
 
     float BaseTime;
 
@@ -20,6 +22,7 @@ public class OpenMenu : MonoBehaviour {
             Time.timeScale = 0;
         } else {
             MenuPanel.SetActive(false);
+            warningMenu.SetActive(false);
             Time.timeScale = BaseTime;
         }
     }

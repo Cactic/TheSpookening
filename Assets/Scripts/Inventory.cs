@@ -14,11 +14,11 @@ public class Inventory : MonoBehaviour {
     RadialMenu radial;
 
     ItemInteraction item;
+    [SerializeField] GameObject[] tempImages;
 
     void Start() {
         InventorySlots = new List<Slot>();
         Images = new List<Image>();
-        GameObject[] tempImages = GameObject.FindGameObjectsWithTag("Slot Images");
         for(int i = 0; i < tempImages.Length; i++) {
             Images.Add(tempImages[i].GetComponent<Image>());
             InventorySlots.Add(new Slot(i, Images[i], null));

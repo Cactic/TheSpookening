@@ -611,10 +611,10 @@ PlayerSettings:
   facebookXfbml: 0
   facebookFrictionlessRequests: 1
   apiCompatibilityLevel: 6
-  cloudProjectId: a37101d8-f3e4-4490-8bf2-834d8ac0a6df
+  cloudProjectId: 1453cdf4-d43d-4598-8787-26dae605b2e9
   framebufferDepthMemorylessMode: 0
-  projectName: The Spookening (1)
-  organizationId: djdio2000
+  projectName: The Spookening
+  organizationId: unity_mtdhmxjfpsywtw
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
   disableOldInputManagerSupport: 0

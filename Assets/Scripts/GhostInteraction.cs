@@ -13,7 +13,7 @@ public class GhostInteraction : MonoBehaviour
     public int[] VoiceOversMouth;
     public int[] VoiceOversHand;
     public int[] VoiceOversSaveable;
-    public bool Saveable;
+    public static bool Saveable;
 
     public Renderer Ghost;
     public Material Happy;

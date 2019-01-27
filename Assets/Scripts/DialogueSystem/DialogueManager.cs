@@ -26,6 +26,8 @@ public class DialogueManager : MonoBehaviour {
         canvas.gameObject.SetActive(true);
         State.Instance.Awake();
         canvas.gameObject.SetActive(false);
+        StartDialogue(new string[] {"Ok, the house owner is being bothered by the moaning of a ghost.",
+            "Ah, I can already see the ghost in the corner, I should see what is wrong." }, new int[] {9,9 });
     }
 
     public void StartDialogue(string[] text, int[] clips) {
@@ -39,8 +41,9 @@ public class DialogueManager : MonoBehaviour {
             "I wonder what the clues I have found are telling me...Let's recount",
             "I found a portrait of a couple sharing a hug and a kiss, I found a valentines coffee cup and I found a comfortable chair",
             "Somehow I get the feeling the chair might not have been a clue, but if I look at the other items, I think I know what this ghost is missing",
-            "This ghost is missing the love of the living, I think all he needs is a good old hug."}, new int[] { });
+            "This ghost is missing the love of the living, I think all he needs is a good old hug."}, new int[] {9,9,9,9,9,9 });
             Globals.PlayingEndingFirstStory = true;
+            GhostInteraction.Saveable = true;
         }
     }
 

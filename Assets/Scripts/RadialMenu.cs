@@ -57,7 +57,6 @@ public class RadialMenu : MonoBehaviour {
     }
 
     void Update() {
-        if(currentGhost != null) print(currentGhost.Saveable);
         ray = cam.ScreenPointToRay(Input.mousePosition);
 
         ShowMenuOnMouseClick();
@@ -219,7 +218,7 @@ public class RadialMenu : MonoBehaviour {
         }
         if(currentItem != null) DialogueManager.Instance.StartDialogue(currentItem.Mouth, currentItem.VoiceOversMouth);
         if(currentDoor != null) DialogueManager.Instance.StartDialogue(currentDoor.Mouth, currentDoor.VoiceOversMouth);
-        if(currentGhost != null && currentGhost.Saveable) {
+        if(currentGhost != null && GhostInteraction.Saveable) {
             DialogueManager.Instance.StartDialogue(currentGhost.MouthSaveable, currentGhost.VoiceOversSaveable);
             currentGhost.Ghost.material = currentGhost.Happy;
             foreach(ParticleSystem p in currentGhost.Tears) {
