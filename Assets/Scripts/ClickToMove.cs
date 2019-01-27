@@ -15,22 +15,23 @@ public class ClickToMove : MonoBehaviour
     private void Update()
     {
         //and mouse not hovering over obj.
-        if(thisRadialMenu.showingMenu == false)
+        if (thisRadialMenu.showingMenu == false && State.Instance.isClicked == false)
         {
             if (Input.GetMouseButtonDown(0))
             {
                 Ray ray = cam.ScreenPointToRay(Input.mousePosition);
+                thisRadialMenu.middleImage.transform.position = Input.mousePosition;
                 RaycastHit hit;
 
                 if (Physics.Raycast(ray, out hit))
                 {
                     //move agent
+
                     agent.SetDestination(hit.point);
                     anim.SetFloat("Speed", 1);
                 }
             }
         }
-        
 
         if (!agent.pathPending)
         {
@@ -40,7 +41,7 @@ public class ClickToMove : MonoBehaviour
                 {
                     // Done
                     anim.SetFloat("Speed", 0);
-        
+
                 }
             }
         }
