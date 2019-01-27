@@ -9,6 +9,10 @@ public class GhostInteraction : MonoBehaviour
     public string[] Mouth;
     public string[] MouthSaveable;
     public string[] Hand;
+    public int[] VoiceOversEyes;
+    public int[] VoiceOversMouth;
+    public int[] VoiceOversHand;
+    public int[] VoiceOversSaveable;
     public bool Saveable;
 
     public Renderer Ghost;

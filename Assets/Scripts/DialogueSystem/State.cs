@@ -27,15 +27,25 @@ public class State : MonoBehaviour
 
     public IEnumerator GetStateText(Dialogue dialogue, Text text, Canvas canvas)
     {
-        foreach (string s in dialogue.storyText)
-        {
+        for(int i = 0; i < dialogue.storyText.Length; i++) {
             canvas.gameObject.SetActive(true);
-            text.text = s;
+            text.text = dialogue.storyText[i];
+            AudioManager.Instance.PlayVoiceOver(i);
             isClicked = true;
 
             yield return new WaitUntil(() => Input.GetMouseButtonDown(0));
             yield return new WaitForEndOfFrame();
         }
+        //foreach (string s in dialogue.storyText)
+        //{
+        //    canvas.gameObject.SetActive(true);
+        //    text.text = s;
+        //    isClicked = true;
+        //
+        //    yield return new WaitUntil(() => Input.GetMouseButtonDown(0));
+        //    yield return new WaitForEndOfFrame();
+        //    AudioManager.Instance.PlayVoiceOver(ID);
+        //}
         canvas.gameObject.SetActive(false);
         isClicked = false;
         yield break;

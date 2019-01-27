@@ -28,18 +28,18 @@ public class DialogueManager : MonoBehaviour {
         canvas.gameObject.SetActive(false);
     }
 
-    public void StartDialogue(string[] text) {
-        StartCoroutine(State.Instance.GetStateText(new Dialogue(text), textComponent, canvas));
+    public void StartDialogue(string[] text, int[] clips) {
+        StartCoroutine(State.Instance.GetStateText(new Dialogue(text,clips), textComponent, canvas));
     }
 
     private void Update() {
         if(Globals.FirstStoryProgress >= 3 && !Globals.PlayingEndingFirstStory) {
             StartDialogue(new string[] { "I think I have collected everything around here.",
-            "Knowing that ghosts are stuck in our world because they are missing something and this little seems sad",
+            "Knowing that ghosts are stuck in our world because they are missing something makes me sad",
             "I wonder what the clues I have found are telling me...Let's recount",
             "I found a portrait of a couple sharing a hug and a kiss, I found a valentines coffee cup and I found a comfortable chair",
             "Somehow I get the feeling the chair might not have been a clue, but if I look at the other items, I think I know what this ghost is missing",
-            "This ghost is missing the love of the living, I think all he needs is a good old hug."});
+            "This ghost is missing the love of the living, I think all he needs is a good old hug."}, new int[] { });
             Globals.PlayingEndingFirstStory = true;
         }
     }
@@ -49,9 +49,11 @@ public class DialogueManager : MonoBehaviour {
 public class Dialogue {
 
     public string[] storyText;
+    public int[] audioClips;
 
-    public Dialogue(string[] dialogue) {
+    public Dialogue(string[] dialogue, int[] clips) {
         storyText = new string[dialogue.Length];
+        audioClips = new int[clips.Length];
         for(int i = 0; i < dialogue.Length; i++) {
             storyText[i] = dialogue[i];
         }

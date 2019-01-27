@@ -8,6 +8,9 @@ public class ItemInteraction : MonoBehaviour {
     public string[] Eyes;
     public string[] Mouth;
     public string[] Hand;
+    public int[] VoiceOversEyes;
+    public int[] VoiceOversMouth;
+    public int[] VoiceOversHand;
     public string[] HandAfterPickup;
     public Sprite Image;
     

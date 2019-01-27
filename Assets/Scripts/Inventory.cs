@@ -49,6 +49,9 @@ public class Inventory : MonoBehaviour {
                 interaction.HandAfterPickup = item.ItemInteraction.HandAfterPickup;
                 interaction.Hand = item.ItemInteraction.HandAfterPickup;
                 interaction.Image = item.ItemInteraction.Image;
+                interaction.VoiceOversMouth = item.ItemInteraction.VoiceOversMouth;
+                interaction.VoiceOversEyes = item.ItemInteraction.VoiceOversEyes;
+                interaction.VoiceOversHand = item.ItemInteraction.VoiceOversHand;
 
                 Images[s.SlotNumber].gameObject.GetComponent<Button>().onClick.AddListener(delegate { OnUseItem(interaction); });
                 break;

@@ -180,12 +180,12 @@ GameObject:
   - component: {fileID: 5406653760245348997}
   - component: {fileID: 5406653760245348998}
   m_Layer: 5
-  m_Name: MIddleImage
+  m_Name: MiddleImage
   m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &5406653760245348999
 RectTransform:
   m_ObjectHideFlags: 0
@@ -487,10 +487,17 @@ MonoBehaviour:
   interactImage: {fileID: 5406653760788248131}
   examineImage: {fileID: 5406653760610667088}
   mouthImage: {fileID: 5406653760232439173}
+  mouthIcon: {fileID: 0}
+  examineIcon: {fileID: 0}
+  interactionIcon: {fileID: 0}
   cam: {fileID: 0}
   TextController: {fileID: 0}
+  m_Raycaster: {fileID: 5406653760631749360}
+  m_EventSystem: {fileID: 0}
   agent: {fileID: 0}
   inventory: {fileID: 0}
+  door: {fileID: 0}
+  openDoor: {fileID: 0}
   showingMenu: 0
 --- !u!1 &5406653760788248135
 GameObject:

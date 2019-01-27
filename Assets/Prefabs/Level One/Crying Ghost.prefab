@@ -27,7 +27,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6075592919426350933}
-  m_LocalRotation: {x: -0.26931742, y: 0.65381056, z: 0.65381044, w: 0.26931745}
+  m_LocalRotation: {x: -0.26931486, y: 0.6538116, z: 0.6538116, w: 0.26931486}
   m_LocalPosition: {x: 2.03, y: 1.964, z: -3.08}
   m_LocalScale: {x: 5.0000067, y: 5.000005, z: 5.000005}
   m_Children:
@@ -5127,6 +5127,10 @@ MonoBehaviour:
   Hand:
   - What good could possibly come from trying to grab a ghost? Wouldn't my time be
     better spent trying to figure out what is wrong?
+  VoiceOversEyes: 
+  VoiceOversMouth: 
+  VoiceOversHand: 
+  VoiceOversSaveable: 
   Saveable: 0
   Ghost: {fileID: 6075592919426350934}
   Happy: {fileID: 2100000, guid: 1890193859ee49e46a9877ac9a9a0842, type: 2}
