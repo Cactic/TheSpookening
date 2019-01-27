@@ -12,7 +12,22 @@ ModelImporter:
     3300000: //RootNode
     4300000: Box003
     9500000: //RootNode
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: spk_room1_door_Material__47
+    second: {fileID: 2100000, guid: 6582aaba61977a34aba62a97bab686a1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: spk_room1_door_Material__59
+    second: {fileID: 2100000, guid: 41cb6b44a003af3409940043d1105607, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: spk_room1_door_spk_room1_door_spk_room1_door_Material__50
+    second: {fileID: 2100000, guid: 41cb6b44a003af3409940043d1105607, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
