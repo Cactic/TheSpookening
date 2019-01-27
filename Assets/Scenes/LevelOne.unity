@@ -215,6 +215,70 @@ MonoBehaviour:
   m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!84 &685322652
+RenderTexture:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_ImageContentsHash:
+    serializedVersion: 2
+    Hash: 00000000000000000000000000000000
+  m_ForcedFallbackFormat: 4
+  m_DownscaleFallback: 0
+  m_Width: 404
+  m_Height: 227
+  m_AntiAliasing: 4
+  m_DepthFormat: 2
+  m_ColorFormat: 7
+  m_MipMap: 0
+  m_GenerateMips: 1
+  m_SRGB: 0
+  m_UseDynamicScale: 0
+  m_BindMS: 0
+  m_TextureSettings:
+    serializedVersion: 2
+    m_FilterMode: 1
+    m_Aniso: 1
+    m_MipBias: 0
+    m_WrapU: 1
+    m_WrapV: 1
+    m_WrapW: 1
+  m_Dimension: 2
+  m_VolumeDepth: 1
+--- !u!84 &687689070
+RenderTexture:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_ImageContentsHash:
+    serializedVersion: 2
+    Hash: 00000000000000000000000000000000
+  m_ForcedFallbackFormat: 4
+  m_DownscaleFallback: 0
+  m_Width: 404
+  m_Height: 227
+  m_AntiAliasing: 4
+  m_DepthFormat: 2
+  m_ColorFormat: 7
+  m_MipMap: 0
+  m_GenerateMips: 1
+  m_SRGB: 0
+  m_UseDynamicScale: 0
+  m_BindMS: 0
+  m_TextureSettings:
+    serializedVersion: 2
+    m_FilterMode: 1
+    m_Aniso: 1
+    m_MipBias: 0
+    m_WrapU: 1
+    m_WrapV: 1
+    m_WrapW: 1
+  m_Dimension: 2
+  m_VolumeDepth: 1
 --- !u!1001 &694174376
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -281,6 +345,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 135.225
+      objectReference: {fileID: 0}
+    - target: {fileID: 6075592920223098195, guid: 06fc4a2eeb3faea45824a50ee2fc8941,
+        type: 3}
+      propertyPath: Saveable
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 06fc4a2eeb3faea45824a50ee2fc8941, type: 3}
@@ -474,7 +543,48 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TargetTexture
       value: 
-      objectReference: {fileID: 1778769684}
+      objectReference: {fileID: 685322652}
+    - target: {fileID: 1042508927758797047, guid: 724778e0368c04045b333a3fc81b6ed4,
+        type: 3}
+      propertyPath: HandAfterPickup.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1042508927758797047, guid: 724778e0368c04045b333a3fc81b6ed4,
+        type: 3}
+      propertyPath: Hand.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1042508927758797047, guid: 724778e0368c04045b333a3fc81b6ed4,
+        type: 3}
+      propertyPath: Hand.Array.data[0]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1042508927758797047, guid: 724778e0368c04045b333a3fc81b6ed4,
+        type: 3}
+      propertyPath: HandAfterPickup.Array.data[0]
+      value: I do not want to break the portrait, so i will leave it where it is
+      objectReference: {fileID: 0}
+    - target: {fileID: 1042508928442751403, guid: 724778e0368c04045b333a3fc81b6ed4,
+        type: 3}
+      propertyPath: HandAfterPickup.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1042508928442751403, guid: 724778e0368c04045b333a3fc81b6ed4,
+        type: 3}
+      propertyPath: Hand.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1042508928442751403, guid: 724778e0368c04045b333a3fc81b6ed4,
+        type: 3}
+      propertyPath: Hand.Array.data[0]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1042508928442751403, guid: 724778e0368c04045b333a3fc81b6ed4,
+        type: 3}
+      propertyPath: HandAfterPickup.Array.data[0]
+      value: 'After unnecessarily picking up this heavy chair, I decided to leave
+        it where it was. What do I need with a chair anyways? '
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 724778e0368c04045b333a3fc81b6ed4, type: 3}
 --- !u!1001 &1066120118
@@ -936,70 +1046,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 114172016}
   m_PrefabAsset: {fileID: 0}
---- !u!84 &1447957235
-RenderTexture:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 
-  m_ImageContentsHash:
-    serializedVersion: 2
-    Hash: 00000000000000000000000000000000
-  m_ForcedFallbackFormat: 4
-  m_DownscaleFallback: 0
-  m_Width: 1620
-  m_Height: 911
-  m_AntiAliasing: 4
-  m_DepthFormat: 2
-  m_ColorFormat: 7
-  m_MipMap: 0
-  m_GenerateMips: 1
-  m_SRGB: 0
-  m_UseDynamicScale: 0
-  m_BindMS: 0
-  m_TextureSettings:
-    serializedVersion: 2
-    m_FilterMode: 1
-    m_Aniso: 1
-    m_MipBias: 0
-    m_WrapU: 1
-    m_WrapV: 1
-    m_WrapW: 1
-  m_Dimension: 2
-  m_VolumeDepth: 1
---- !u!84 &1778769684
-RenderTexture:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 
-  m_ImageContentsHash:
-    serializedVersion: 2
-    Hash: 00000000000000000000000000000000
-  m_ForcedFallbackFormat: 4
-  m_DownscaleFallback: 0
-  m_Width: 253
-  m_Height: 574
-  m_AntiAliasing: 4
-  m_DepthFormat: 2
-  m_ColorFormat: 7
-  m_MipMap: 0
-  m_GenerateMips: 1
-  m_SRGB: 0
-  m_UseDynamicScale: 0
-  m_BindMS: 0
-  m_TextureSettings:
-    serializedVersion: 2
-    m_FilterMode: 1
-    m_Aniso: 1
-    m_MipBias: 0
-    m_WrapU: 1
-    m_WrapV: 1
-    m_WrapW: 1
-  m_Dimension: 2
-  m_VolumeDepth: 1
 --- !u!1001 &1781204769
 PrefabInstance:
   m_ObjectHideFlags: 0

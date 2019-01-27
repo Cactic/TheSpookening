@@ -50,7 +50,7 @@ public class Inventory : MonoBehaviour {
                 interaction.Hand = item.ItemInteraction.HandAfterPickup;
                 interaction.Image = item.ItemInteraction.Image;
 
-                Images[s.SlotNumber].gameObject.GetComponent<Button>().onClick.AddListener(delegate { OnUseItem(item.ItemInteraction); });
+                Images[s.SlotNumber].gameObject.GetComponent<Button>().onClick.AddListener(delegate { OnUseItem(interaction); });
                 break;
             }
         }
