@@ -12,6 +12,8 @@ public class OpenDoor : MonoBehaviour {
             step += 0.005f;
             yield return new WaitForSeconds(0f);
         }
+        transform.GetChild(0).GetComponent<GlowObject>().GlowColor = Color.red;
+        transform.GetChild(0).tag = "Open Door";
         yield break;
     }
 }

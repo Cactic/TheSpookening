@@ -11,6 +11,7 @@ TagManager:
   - NotInteractable
   - Dialogue
   - Ghost
+  - Open Door
   layers:
   - Default
   - TransparentFX

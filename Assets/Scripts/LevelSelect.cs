@@ -52,8 +52,6 @@ public class LevelSelect : MonoBehaviour
         tweenTimeKey += Time.smoothDeltaTime / duration;
         tweenValue = MoveCameraCurve.Evaluate(tweenTimeKey);
         transform.position = Vector3.Lerp(currentPosition, currentGameObject.transform.position, tweenValue);
-        Debug.Log(transform.position);
-        //Debug.Log(tweenTimeKey);
 
         if (tweenTimeKey > 1f)
         {
@@ -64,9 +62,6 @@ public class LevelSelect : MonoBehaviour
             cam.transform.position = currentGameObject.transform.position;
             block.SetActive(false);
             startButton.SetActive(true);
-
-            //Debug.Log(currentGameObject.transform.position);
-            //Debug.Log(currentGameObject.transform.position);
         }
     }
 

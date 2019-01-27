@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using UnityEngine.AI;
+using UnityEngine.SceneManagement;
 
 public class RadialMenu : MonoBehaviour {
     [SerializeField] private GameObject middleImage;
@@ -21,10 +22,12 @@ public class RadialMenu : MonoBehaviour {
 
     ItemInteraction currentItem;
     GhostInteraction currentGhost;
+    DoorInteraction currentDoor;
     public NavMeshAgent agent;
 
     [SerializeField] Inventory inventory;
     [SerializeField] OpenDoor door;
+    [SerializeField] GameObject openDoor;
 
     public bool showingMenu;
     bool playerMoving;
@@ -99,6 +102,12 @@ public class RadialMenu : MonoBehaviour {
                     playerMoving = true;
                 }
             }
+            if(hit.collider.tag == "Open Door" && !showingMenu) {
+                if(Input.GetMouseButtonDown(0)) {
+                    currentDoor = hit.collider.gameObject.GetComponent<DoorInteraction>();
+                    playerMoving = true;
+                }
+            }
         }
         if(overrule) {
             currentItem = item;
@@ -144,6 +153,12 @@ public class RadialMenu : MonoBehaviour {
             currentGhost = null;
             return;
         }
+        if(currentDoor != null && currentDoor.Hand.Length <= 0) {
+            DialogueManager.Instance.StartDialogue(currentDoor.Hand);
+            currentDoor = null;
+            SceneManager.LoadScene("LevelSelect");
+            return;
+        }
         if(!currentItem.Name.Contains("in inventory")) inventory.Add(new Item(currentItem.Name, currentItem.Eyes, currentItem.Mouth,
             currentItem.Hand, currentItem.HandAfterPickup, currentItem.Image, currentItem));
         currentItem.gameObject.tag = "Untagged";
@@ -159,7 +174,10 @@ public class RadialMenu : MonoBehaviour {
         }
         if(currentItem != null) DialogueManager.Instance.StartDialogue(currentItem.Eyes);
         if(currentGhost != null) DialogueManager.Instance.StartDialogue(currentGhost.Eyes);
+        if(currentDoor != null) DialogueManager.Instance.StartDialogue(currentDoor.Eyes);
         currentItem = null;
+        currentGhost = null;
+        currentDoor = null;
 
     }
 
@@ -170,14 +188,17 @@ public class RadialMenu : MonoBehaviour {
         }
         if(currentItem != null) DialogueManager.Instance.StartDialogue(currentItem.Mouth);
         if(currentGhost != null && !currentGhost.Saveable) DialogueManager.Instance.StartDialogue(currentGhost.Mouth);
+        if(currentDoor != null) DialogueManager.Instance.StartDialogue(currentDoor.Mouth);
         if(currentGhost != null && currentGhost.Saveable) {
             DialogueManager.Instance.StartDialogue(currentGhost.MouthSaveable);
             currentGhost.Ghost.material = currentGhost.Happy;
             foreach(ParticleSystem p in currentGhost.Tears) {
                 p.Stop();
             }
-            door.Open(new Quaternion());
+            StartCoroutine(door.Open(openDoor.transform.rotation));
         }
         currentItem = null;
+        currentGhost = null;
+        currentDoor = null;
     }
 }
