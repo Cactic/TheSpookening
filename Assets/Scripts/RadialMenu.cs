@@ -24,6 +24,7 @@ public class RadialMenu : MonoBehaviour {
     public NavMeshAgent agent;
 
     [SerializeField] Inventory inventory;
+    [SerializeField] OpenDoor door;
 
     public bool showingMenu;
     bool playerMoving;
@@ -133,14 +134,13 @@ public class RadialMenu : MonoBehaviour {
             optionsImages[i].CrossFadeAlpha(0, 0.25f, false);
             showingMenu = false;
         }
-        print(currentItem.Hand.Length);
         if(currentItem != null && currentItem.Hand.Length >= 1) {
-            TextController.GetComponent<DialogueManager>().StartDialogue(currentItem.Hand);
+            DialogueManager.Instance.StartDialogue(currentItem.Hand);
             currentItem = null;
             return;
         }
         if(currentGhost != null && currentGhost.Hand.Length >= 1) {
-            TextController.GetComponent<DialogueManager>().StartDialogue(currentGhost.Hand);
+            DialogueManager.Instance.StartDialogue(currentGhost.Hand);
             currentGhost = null;
             return;
         }
@@ -148,6 +148,7 @@ public class RadialMenu : MonoBehaviour {
             currentItem.Hand, currentItem.HandAfterPickup, currentItem.Image, currentItem));
         currentItem.gameObject.tag = "Untagged";
         currentItem.gameObject.GetComponent<GlowObject>().GlowColor = Color.black;
+        Globals.FirstStoryProgress++;
         currentItem = null;
     }
 
@@ -156,8 +157,8 @@ public class RadialMenu : MonoBehaviour {
             optionsImages[i].CrossFadeAlpha(0, 0.25f, false);
             showingMenu = false;
         }
-        if(currentItem != null) TextController.GetComponent<DialogueManager>().StartDialogue(currentItem.Eyes);
-        if(currentGhost != null) TextController.GetComponent<DialogueManager>().StartDialogue(currentGhost.Eyes);
+        if(currentItem != null) DialogueManager.Instance.StartDialogue(currentItem.Eyes);
+        if(currentGhost != null) DialogueManager.Instance.StartDialogue(currentGhost.Eyes);
         currentItem = null;
 
     }
@@ -167,14 +168,15 @@ public class RadialMenu : MonoBehaviour {
             optionsImages[i].CrossFadeAlpha(0, 0.25f, false);
             showingMenu = false;
         }
-        if(currentItem != null) TextController.GetComponent<DialogueManager>().StartDialogue(currentItem.Mouth);
-        if(currentGhost != null && !currentGhost.Saveable) TextController.GetComponent<DialogueManager>().StartDialogue(currentGhost.Mouth);
+        if(currentItem != null) DialogueManager.Instance.StartDialogue(currentItem.Mouth);
+        if(currentGhost != null && !currentGhost.Saveable) DialogueManager.Instance.StartDialogue(currentGhost.Mouth);
         if(currentGhost != null && currentGhost.Saveable) {
-            TextController.GetComponent<DialogueManager>().StartDialogue(currentGhost.MouthSaveable);
+            DialogueManager.Instance.StartDialogue(currentGhost.MouthSaveable);
             currentGhost.Ghost.material = currentGhost.Happy;
             foreach(ParticleSystem p in currentGhost.Tears) {
                 p.Stop();
             }
+            door.Open(new Quaternion());
         }
         currentItem = null;
     }
